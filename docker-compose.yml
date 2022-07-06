@@ -1,0 +1,13 @@
+version : "3.3"
+services:
+  redis:
+    image: "redis:alpine"
+    ports:
+     - "6379"
+  script:
+    image: "python:0.0.1"
+  app:
+    image: "auto-suggest:0.0.1"
+    ports:
+        - 8080
+    
