@@ -1,13 +1,8 @@
 package com.evaluation.fleet.AutoSuggest.config;
 
-import com.evaluation.fleet.AutoSuggest.domain.CountySuggestion;
-import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class RedisUtil {
