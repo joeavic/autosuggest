@@ -16,8 +16,8 @@ public class RedisUtil {
 
     public static JedisConnectionFactory jedisConnectionFactory(){
         JedisConnectionFactory connectionFactory = new JedisConnectionFactory();
-        connectionFactory.getStandaloneConfiguration().setHostName("redis");
-        connectionFactory.getStandaloneConfiguration().setPort(6379);
+//         connectionFactory.getStandaloneConfiguration().setHostName("redis");
+//         connectionFactory.getStandaloneConfiguration().setPort(6379);
         connectionFactory.afterPropertiesSet();
         return connectionFactory;
     }
