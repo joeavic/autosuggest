@@ -35,9 +35,23 @@ class AutoSuggestApplicationTests {
 	}
 
 	@Test
-	public void testAPIResultForQueryCA() throws Exception{
-		this.mockMvc.perform(get("/suggest")).andDo(print()).andExpect(status().isOk())
-				.andExpect(content().string(containsString("{\"fips\":\"13043\",\"state\":\"GA\",\"name\":\"Candler\"}")));
+	public void testCityNameQuery() throws Exception{
+		this.mockMvc.perform(get("/suggest?q=camden")).andDo(print()).andExpect(status().isOk())
+				.andExpect(content().string(containsString("{\"fips\":\"13039\",\"state\":\"GA\",\"name\":\"Camden\"}")));
 	}
+
+
+	@Test
+	public void testStateNameQuery() throws Exception{
+		this.mockMvc.perform(get("/suggest?q=ca")).andDo(print()).andExpect(status().isOk())
+				.andExpect(content().string(containsString("{\"fips\":\"06015\",\"state\":\"CA\",\"name\":\"Del Norte\"}")));
+	}
+	@Test
+	public void testCityAndStateNameQuery() throws Exception{
+		this.mockMvc.perform(get("/suggest?q=camden,nc")).andDo(print()).andExpect(status().isOk())
+				.andExpect(content().string(containsString("{\"fips\":\"37029\",\"state\":\"NC\",\"name\":\"Camden\"}")));
+	}
+
+
 
 }
