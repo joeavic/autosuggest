@@ -1,4 +1,4 @@
-# autosuggest
+# Auto Suggest / Type-Ahead using spring boot - redis sorted sets
 
 required 
 
